@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Scientific</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('calc')">Kalkulator</div>
+      <div class="tab" onclick="showTab('convert')">Konversi</div>
+    </div>
+
+    <!-- KALKULATOR -->
+    <div id="calc" class="panel active">
+      <input type="text" id="expression" placeholder="Masukkan ekspresi">
+      <input type="text" id="calcResult" placeholder="Hasil" readonly>
+
+      <div class="grid">
+        <button class="btn" onclick="append('7')">7</button>
+        <button class="btn" onclick="append('8')">8</button>
+        <button class="btn" onclick="append('9')">9</button>
+        <button class="btn" onclick="append('/')">÷</button>
+        <button class="btn" onclick="append('4')">4</button>
+        <button class="btn" onclick="append('5')">5</button>
+        <button class="btn" onclick="append('6')">6</button>
+        <button class="btn" onclick="append('*')">×</button>
+        <button class="btn" onclick="append('1')">1</button>
+        <button class="btn" onclick="append('2')">2</button>
+        <button class="btn" onclick="append('3')">3</button>
+        <button class="btn" onclick="append('-')">−</button>
+        <button class="btn" onclick="append('0')">0</button>
+        <button class="btn" onclick="append('.')">.</button>
+        <button class="btn" onclick="calculate()">=</button>
+        <button class="btn" onclick="append('+')">+</button>
+        <button class="btn" onclick="append('Math.sin(')">sin</button>
+        <button class="btn" onclick="append('Math.cos(')">cos</button>
+        <button class="btn" onclick="append('Math.tan(')">tan</button>
+        <button class="btn" onclick="append('Math.sqrt(')">√</button>
+        <button class="btn" onclick="append('Math.log(')">log</button>
+        <button class="btn" onclick="append('Math.exp(')">exp</button>
+        <button class="btn" onclick="clearInput()">CLR</button>
+      </div>
+    </div>
+
+    <!-- KONVERSI -->
+    <div id="convert" class="panel">
+      <input type="number" id="convValue" placeholder="Masukkan nilai">
+      <select id="convUnit">
+        <option value="g_to_kg">Gram ke Kilogram</option>
+        <option value="kg_to_g">Kilogram ke Gram</option>
+        <option value="m_to_cm">Meter ke Centimeter</option>
+        <option value="cm_to_m">Centimeter ke Meter</option>
+      </select>
+      <button onclick="convert()">Konversi</button>
+      <input type="text" id="convResult" placeholder="Hasil" readonly>
+    </div>
+  </div>
+
+</body>
+</html>
