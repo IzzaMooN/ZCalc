@@ -18,6 +18,7 @@ body {
 
 .display {
     margin-bottom: 10px;
+    width: calc(100% - 20px);
 }
 
 .display input {
