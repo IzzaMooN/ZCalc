@@ -15,6 +15,11 @@ function calculate() {
     let display = document.getElementById('display');
     let expression = display.value;
 
+    // Otomatis tambahkan tanda kurung tutup jika ada 'sqrt(' yang belum ditutup
+    if (expression.includes('sqrt(') && !expression.includes(')')) {
+        expression += ')';
+    }
+
     // Ganti 'sqrt(' dengan 'Math.sqrt('
     expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
     // Ganti 'exp(' dengan 'Math.exp('
