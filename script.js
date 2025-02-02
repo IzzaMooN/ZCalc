@@ -13,8 +13,17 @@ function backspace() {
 
 function calculate() {
     let display = document.getElementById('display');
+    let expression = display.value;
+
+    // Ganti 'sqrt(' dengan 'Math.sqrt('
+    expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
+    // Ganti 'exp(' dengan 'Math.exp('
+    expression = expression.replace(/exp\(/g, 'Math.exp(');
+    // Ganti 'log(' dengan 'Math.log10(' (logaritma basis 10)
+    expression = expression.replace(/log\(/g, 'Math.log10(');
+
     try {
-        display.value = eval(display.value);
+        display.value = eval(expression);
     } catch (e) {
         display.value = 'Error';
     }
