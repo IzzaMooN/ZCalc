@@ -20,12 +20,23 @@ function calculate() {
         expression += ')';
     }
 
+    if (expression.includes('log(') && !expression.includes(')')) {
+        expression += ')';
+    }
+    
+    if (expression.includes('exp(') && !expression.includes(')')) {
+        expression += ')';
+    }
+
     // Ganti 'sqrt(' dengan 'Math.sqrt('
     expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
     // Ganti 'exp(' dengan 'Math.exp('
     expression = expression.replace(/exp\(/g, 'Math.exp(');
     // Ganti 'log(' dengan 'Math.log10(' (logaritma basis 10)
     expression = expression.replace(/log\(/g, 'Math.log10(');
+
+    expression = expression.replace(/x/g, '*');
+
 
     try {
         display.value = eval(expression);
