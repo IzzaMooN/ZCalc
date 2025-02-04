@@ -28,6 +28,14 @@ function calculate() {
         expression += ')';
     }
 
+    if (expression.includes('log(') && !expression.includes(')')) {
+        expression += ')';
+    }
+    
+    if (expression.includes('exp(') && !expression.includes(')')) {
+        expression += ')';
+    }
+
     // Ganti 'sqrt(' dengan 'Math.sqrt('
     expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
     // Ganti 'exp(' dengan 'Math.exp('
